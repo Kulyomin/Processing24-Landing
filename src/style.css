@@ -82,7 +82,8 @@ button:hover {
    background: #0670a1;
 }
 
-input, select {
+input,
+select {
    background: #fff;
    outline: none;
    border: 1px solid #D5D5D5;
@@ -135,6 +136,34 @@ header {
    font-weight: 600;
    font-size: 18px;
    line-height: 22px;
+}
+
+/* Burger Menu */
+.burger-menu {
+   display: none;
+   font-size: 40px;
+   cursor: pointer;
+   transition: 0.3s ease;
+   z-index: 30;
+}
+
+.burger-menu:hover {
+   color: #098FCF;
+}
+
+.burger-overlay {
+   position: absolute;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   z-index: 10;
+}
+
+.burger-overlay.active {
+   display: block;
+   background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Navbar */
@@ -229,6 +258,10 @@ header {
 /* Table */
 .main-price {
    margin-bottom: 100px;
+}
+
+.table-container {
+   overflow-x: auto;
 }
 
 .main-price-table {
@@ -329,7 +362,8 @@ header {
    width: 50%;
 }
 
-.main-calculator-form input,select {
+.main-calculator-form input,
+select {
    width: 100%;
    margin-bottom: 16px;
 }
@@ -713,6 +747,7 @@ header {
 /* Reviews Slider */
 .reviews-slider {
    margin-bottom: 44px;
+   overflow: hidden;
 }
 
 /* Button */
@@ -721,7 +756,7 @@ header {
    margin: 0 auto;
 }
 
-.main-reviews .container  {
+.main-reviews .container {
    position: relative;
 }
 
@@ -748,11 +783,11 @@ header {
 .main-questions a {
    cursor: pointer;
    border-bottom: 1px solid white;
-   transition:border 0.3s ease;
+   transition: border 0.3s ease;
 }
 
 .main-questions a:hover {
-   transition:border 0.3s ease;
+   transition: border 0.3s ease;
    border-bottom: 1px solid transparent;
 }
 
@@ -798,11 +833,12 @@ header {
    display: flex;
    justify-content: space-between;
    gap: 90px;
+   text-align: center;
 }
 
 .menu-link a {
    text-decoration: none;
-   color:  #737581;
+   color: #737581;
    font-size: 14px;
    font-weight: 600;
    cursor: pointer;
@@ -853,6 +889,14 @@ header {
       width: 700px;
    }
 
+   .header-info-feedback {
+      display: none;
+   }
+
+   .burger-menu {
+      display: block;
+   }
+
    .main-delivery .main-delivery-title {
       text-align: center;
    }
@@ -899,12 +943,11 @@ header {
    }
 
    .swiper-button-prev {
-      right: 52%;
-      left: auto;
+      left: calc(50% - 60px);
    }
 
    .swiper-button-next {
-      right: 40%;
+      right: calc(50% - 60px);
    }
 
    .main-partners .main-partners-title {
@@ -925,26 +968,268 @@ header {
    }
 
    .main-footer-container {
-      display: grid; 
+      display: grid;
       grid-template-columns: 1fr;
-      grid-template-areas: 
-        "Block2 Block2 ."
-        "Block1 Block3 ."
+      grid-template-areas:
+         "Block2 Block2 ."
+         "Block1 Block3 ."
    }
-   .main-footer-credentials { grid-area: Block1; }
-   .main-footer-menu { grid-area: Block2;margin-bottom: 20px;}
-   .main-footer-contacts { grid-area: Block3;text-align: center;}
+
+   .main-footer-credentials {
+      grid-area: Block1;
+   }
+
+   .main-footer-menu {
+      grid-area: Block2;
+      margin-bottom: 20px;
+   }
+
+   .main-footer-contacts {
+      grid-area: Block3;
+      text-align: center;
+   }
+
    .header-info-logo {
       margin: 0;
    }
+
    .main-footer-coopyright {
       text-align: center;
    }
 }
 
-@media (max-width: 768px) and (min-width: 320px) {
+@media (max-width: 768px) {
    .container {
       width: 100%;
-      padding: 0 30px;
+      padding: 0 15px;
+   }
+
+   header {
+      margin-bottom: 40px;
+   }
+
+   .header-nav {
+      display: none;
+   }
+
+   h1 {
+      font-size: 30px !important;
+   }
+
+   h2 {
+      font-size: 25px !important;
+   }
+
+   h3 {
+      font-size: 20px !important;
+   }
+
+   h4 {
+      font-size: 13px !important;
+   }
+
+   .main-delivery {
+      margin-bottom: 50px;
+      text-align: center;
+   }
+
+   .main-delivery-title {
+      margin-bottom: 10px;
+   }
+
+   .main-delivery-form {
+      padding: 10px;
+   }
+
+   .form-activity {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+   }
+
+   .form-checkbox input {
+      width: 20px;
+      height: 20px;
+   }
+
+   .form-checkbox span {
+      font-size: 12px;
+   }
+
+   .main-price {
+      margin-bottom: 0px;
+      height: auto;
+   }
+
+   .main-price-table th {
+      font-size: 13px;
+      line-height: 12px;
+      text-align: center;
+   }
+
+   .main-calculator {
+      background-color: #F9F9F9;
+      padding: 15px 0;
+   }
+
+   .main-calculator-title {
+      margin-bottom: 15px;
+   }
+
+   .main-calculator-form-container {
+      gap: 20px;
+      flex-wrap: wrap;
+   }
+
+   .main-calculator-form {
+      width: 100%;
+      text-align: center;
+   }
+
+   .calculator-info {
+      padding: 20px;
+   }
+
+   .main-about {
+      padding: 15px 0;
+   }
+
+   .main-about-title {
+      margin-bottom: 10px;
+   }
+
+   .block-title {
+      margin-bottom: 10px;
+      line-height: 13px;
+   }
+
+   .block-wrapper>p {
+      font-size: 12px;
+      line-height: 100%;
+   }
+
+   .main-advantages {
+      padding: 15px 0;
+   }
+
+   .main-advantages-title {
+      margin-bottom: 10px;
+   }
+
+   .main-advantages-blocks-wrapper {
+      display: flex;
+      gap: 10px;
+      background: #FFFFFF;
+      padding: 18px 15px;
+   }
+
+   .main-certificates {
+      padding: 20px 0;
+   }
+
+   .swiper-button-prev,
+   .swiper-button-next {
+      top: calc(100% + 45px);
+      width: 45px;
+      height: 45px;
+   }
+
+   .main-reviews-btn-next, .main-reviews-btn-prev {
+      top: 70px;
+   }
+
+   .main-certificates .main-certificates-title {
+      text-align: center;
+      margin-bottom: 50px;
+   }
+
+   .main-partners .main-partners-title {
+      margin-bottom: 20px;
+   }
+
+   .main-partners {
+      margin-bottom: 50px;
+   }
+
+   .main-reviews {
+      padding: 20px 0;
+   }
+
+   .main-reviews .main-reviews-title {
+      margin-bottom: 70px;
+   }
+
+   .reviews-slider {
+      margin-bottom: 20px;
+   }
+
+   .main-questions {
+      padding: 30px 0;
+   }
+
+   .main-questions-title {
+      font-size: 36px;
+      line-height: 40px;
+      margin-bottom: 10px;
+   }
+
+   .main-questions p:nth-child(2) {
+      max-width: 100%;
+   }
+
+   .main-questions .main-questions-input-container {
+      flex-direction: column;
+   }
+
+   .main-questions-button {
+      width: 100%;
+   }
+
+   .slider-item-reviews {
+      margin: 0 auto;
+    }
+}
+
+@media (max-width: 568px) {
+   .calculator-info button {
+      width: 100%;
+   }
+
+   .main-advantages .main-advantages-blocks {
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+   }
+
+   .swiper-button-prev,
+   .swiper-button-next {
+      top: calc(100% + 40px);
+      width: 40px;
+      height: 40px;
+   }
+
+   .swiper-button-next {
+      right: calc(50% - 50px);
+   }
+
+   .swiper-button-prev {
+      left: calc(50% - 50px);
+   }
+
+   .main-reviews-btn-next, .main-reviews-btn-prev {
+      top: 70px;
+   }
+
+   .reviews-slider {
+      margin-bottom: 20px;
+      text-align: center;
+   }
+
+   .main-reviews-button {
+      width: 100%;
+   }
+
+   .main-footer-menu {
+      text-align: center;
+      gap: 30px;
    }
 }

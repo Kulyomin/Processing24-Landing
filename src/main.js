@@ -4,7 +4,6 @@ var certificates_swiper = new Swiper('.certificates-slider', {
       nextEl: '.main-certificates-btn-next',
       prevEl: '.main-certificates-btn-prev'
    },
-   slidesPerView: 4,
    spaceBetween: 31,
    slidesPerGroup: 1,
    loop: true,
@@ -15,6 +14,20 @@ var certificates_swiper = new Swiper('.certificates-slider', {
    },
    watchSlidesProgress: true,
    watchSlidesVisibility: true,
+   breakpoints: {
+      320: {
+         slidesPerView: 'auto',
+      },
+      500: {
+         slidesPerView: 2,
+      },
+      700: {
+         slidesPerView: 3,
+      },
+      968: {
+         slidesPerView: 4,
+      }
+   }
 });
 
 var partners_swiper = new Swiper('.partners-slider', {
@@ -37,11 +50,24 @@ var partners_swiper = new Swiper('.partners-slider', {
       delay: 3000,
       disableOnInteraction: false,
    },
+   breakpoints: {
+      320: {
+         slidesPerView: 'auto',
+      },
+      500: {
+         slidesPerView: 2,
+      },
+      700: {
+         slidesPerView: 3,
+      },
+      968: {
+         slidesPerView: 4,
+      }
+   }
 });
 
 var reviews_swiper = new Swiper('.reviews-slider', {
    loop: true,
-   slidesPerView: 2,
    slidesPerColumn: 2,
    spaceBetween: 30,
    /* Lazy loading */
@@ -55,34 +81,46 @@ var reviews_swiper = new Swiper('.reviews-slider', {
       nextEl: '.main-reviews-btn-next',
       prevEl: '.main-reviews-btn-prev'
    },
+   autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+   },
+   breakpoints: {
+      320: {
+         slidesPerView: 1,
+      },
+      768: {
+         slidesPerView: 2,
+      },
+   }
 });
 /* Input номера телефона */
 document.addEventListener("DOMContentLoaded", function () {
    var eventCalllback = function (e) {
-       var el = e.target,
-       clearVal = el.dataset.phoneClear,
-       pattern = el.dataset.phonePattern,
-       matrix_def = "+7(___) ___-__-__",
-       matrix = pattern ? pattern : matrix_def,
-       i = 0,
-       def = matrix.replace(/\D/g, ""),
-       val = e.target.value.replace(/\D/g, "");
-       if (clearVal !== 'false' && e.type === 'blur') {
-           if (val.length < matrix.match(/([\_\d])/g).length) {
-               e.target.value = '';
-               return;
-           }
-       }
-       if (def.length >= val.length) val = def;
-       e.target.value = matrix.replace(/./g, function (a) {
-           return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
-       });
+      var el = e.target,
+         clearVal = el.dataset.phoneClear,
+         pattern = el.dataset.phonePattern,
+         matrix_def = "+7(___) ___-__-__",
+         matrix = pattern ? pattern : matrix_def,
+         i = 0,
+         def = matrix.replace(/\D/g, ""),
+         val = e.target.value.replace(/\D/g, "");
+      if (clearVal !== 'false' && e.type === 'blur') {
+         if (val.length < matrix.match(/([\_\d])/g).length) {
+            e.target.value = '';
+            return;
+         }
+      }
+      if (def.length >= val.length) val = def;
+      e.target.value = matrix.replace(/./g, function (a) {
+         return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
+      });
    }
    var phone_inputs = document.querySelectorAll('[data-phone-pattern]');
    for (let elem of phone_inputs) {
-       for (let ev of ['input', 'blur', 'focus']) {
-           elem.addEventListener(ev, eventCalllback);
-       }
+      for (let ev of ['input', 'blur', 'focus']) {
+         elem.addEventListener(ev, eventCalllback);
+      }
    }
 });
 /* Работа калькулятора */

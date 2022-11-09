@@ -14,6 +14,7 @@
       rel="stylesheet">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
    <link rel="stylesheet" href="./src/style.css">
+   <script src="https://kit.fontawesome.com/d8485cae70.js" crossorigin="anonymous"></script>
    <title>Processing 24</title>
 </head>
 
@@ -28,6 +29,9 @@
                      127-82-80</span></div>
                <button>Напишите нам</button>
                <button><img src="./src/img/User.svg" alt="User-icon"><span>Личный кабинет</span></button>
+            </div>
+            <div class="burger-menu">
+               <i class="fa-solid fa-bars"></i>
             </div>
          </div>
       </div>
@@ -79,98 +83,99 @@
       <section class="main-price">
          <div class="container">
             <h2 class="main-delivery-title">Стоимость топлива</h2>
-
-            <table class="main-price-table">
-               <thead>
-                  <tr>
-                     <th>Сорт топлива</th>
-                     <th>Экологический класс</th>
-                     <th>Производитель</th>
-                     <th>Наличный расчет</th>
-                     <th>Безналичный расчет</th>
-                  </tr>
-               </thead>
-               <tbody>
-                  <tr>
-                     <td class="table-body-sort" rowspan="5">
-                        <h3>ДТ</h3>
-                     </td>
-                     <td class="table-body-ecologyclass" rowspan="3"><span>ЕВРО-5</span></td>
-                     <td class="table-body-production">Газпромнефть</td>
-                     <td class="table-body-accounting-cash">45.43 р.</td>
-                     <td class="table-body-accounting-cashless">44.43 р.</td>
-                  </tr>
-                  <tr>
-                     <td class="table-body-production">Лукойл</td>
-                     <td class="table-body-accounting-cash">45.16 р.</td>
-                     <td class="table-body-accounting-cashless">43.98 р.</td>
-                  </tr>
-                  <tr>
-                     <td class="table-body-production">Роснефть</td>
-                     <td class="table-body-accounting-cash">42.34 р.</td>
-                     <td class="table-body-accounting-cashless">41.64 р.</td>
-                  </tr>
-                  <tr>
-                     <td class="table-body-ecologyclass" rowspan="2"><span>ЕВРО-4</span></td>
-                     <td class="table-body-production">Газпромнефть</td>
-                     <td class="table-body-accounting-cash">-</td>
-                     <td class="table-body-accounting-cashless">-</td>
-                  </tr>
-                  <tr class="table-body-down">
-                     <td class="table-body-production">Лукойл</td>
-                     <td class="table-body-accounting-cash">41.16 р.</td>
-                     <td class="table-body-accounting-cashless">40.67 р.</td>
-                  </tr>
-               </tbody>
-               <tbody>
-                  <tr>
-                     <td class="table-body-sort" rowspan="8">
-                        <h3>АИ-95</h3>
-                     </td>
-                     <td class="table-body-ecologyclass" rowspan="3"><span>ЕВРО-5</span></td>
-                     <td class="table-body-production">Газпромнефть</td>
-                     <td class="table-body-accounting-cash">45.43 р.</td>
-                     <td class="table-body-accounting-cashless">44.43 р.</td>
-                  </tr>
-                  <tr>
-                     <td class="table-body-production">Роснефть</td>
-                     <td class="table-body-accounting-cash">42.34 р.</td>
-                     <td class="table-body-accounting-cashless">41.64 р.</td>
-                  </tr>
-                  <tr>
-                     <td class="table-body-production">Лукойл</td>
-                     <td class="table-body-accounting-cash">45.16 р.</td>
-                     <td class="table-body-accounting-cashless">43.98 р.</td>
-                  </tr>
-                  <tr>
-                     <td class="table-body-ecologyclass" rowspan="2"><span>ЕВРО-4</span></td>
-                     <td class="table-body-production">Лукойл</td>
-                     <td class="table-body-accounting-cash">41.16 р.</td>
-                     <td class="table-body-accounting-cashless">40.67 р.</td>
-                  </tr>
-                  <tr>
-                     <td class="table-body-production">Газпромнефть</td>
-                     <td class="table-body-accounting-cash">-</td>
-                     <td class="table-body-accounting-cashless">-</td>
-                  </tr>
-                  <tr>
-                     <td class="table-body-ecologyclass last" rowspan="3"><span>ЕВРО-3</span></td>
-                     <td class="table-body-production">Роснефть</td>
-                     <td class="table-body-accounting-cash">42.34 р.</td>
-                     <td class="table-body-accounting-cashless">41.64 р.</td>
-                  </tr>
-                  <tr>
-                     <td class="table-body-production">Газпромнефть</td>
-                     <td class="table-body-accounting-cash">-</td>
-                     <td class="table-body-accounting-cashless">-</td>
-                  </tr>
-                  <tr>
-                     <td class="table-body-production">Лукойл</td>
-                     <td class="table-body-accounting-cash">45.16 р.</td>
-                     <td class="table-body-accounting-cashless">43.98 р.</td>
-                  </tr>
-               </tbody>
-            </table>
+            <div class="table-container">
+               <table class="main-price-table">
+                  <thead>
+                     <tr>
+                        <th>Сорт топлива</th>
+                        <th>Экологический класс</th>
+                        <th>Производитель</th>
+                        <th>Наличный расчет</th>
+                        <th>Безналичный расчет</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td class="table-body-sort" rowspan="5">
+                           <h3>ДТ</h3>
+                        </td>
+                        <td class="table-body-ecologyclass" rowspan="3"><span>ЕВРО-5</span></td>
+                        <td class="table-body-production">Газпромнефть</td>
+                        <td class="table-body-accounting-cash">45.43 р.</td>
+                        <td class="table-body-accounting-cashless">44.43 р.</td>
+                     </tr>
+                     <tr>
+                        <td class="table-body-production">Лукойл</td>
+                        <td class="table-body-accounting-cash">45.16 р.</td>
+                        <td class="table-body-accounting-cashless">43.98 р.</td>
+                     </tr>
+                     <tr>
+                        <td class="table-body-production">Роснефть</td>
+                        <td class="table-body-accounting-cash">42.34 р.</td>
+                        <td class="table-body-accounting-cashless">41.64 р.</td>
+                     </tr>
+                     <tr>
+                        <td class="table-body-ecologyclass" rowspan="2"><span>ЕВРО-4</span></td>
+                        <td class="table-body-production">Газпромнефть</td>
+                        <td class="table-body-accounting-cash">-</td>
+                        <td class="table-body-accounting-cashless">-</td>
+                     </tr>
+                     <tr class="table-body-down">
+                        <td class="table-body-production">Лукойл</td>
+                        <td class="table-body-accounting-cash">41.16 р.</td>
+                        <td class="table-body-accounting-cashless">40.67 р.</td>
+                     </tr>
+                  </tbody>
+                  <tbody>
+                     <tr>
+                        <td class="table-body-sort" rowspan="8">
+                           <h3>АИ-95</h3>
+                        </td>
+                        <td class="table-body-ecologyclass" rowspan="3"><span>ЕВРО-5</span></td>
+                        <td class="table-body-production">Газпромнефть</td>
+                        <td class="table-body-accounting-cash">45.43 р.</td>
+                        <td class="table-body-accounting-cashless">44.43 р.</td>
+                     </tr>
+                     <tr>
+                        <td class="table-body-production">Роснефть</td>
+                        <td class="table-body-accounting-cash">42.34 р.</td>
+                        <td class="table-body-accounting-cashless">41.64 р.</td>
+                     </tr>
+                     <tr>
+                        <td class="table-body-production">Лукойл</td>
+                        <td class="table-body-accounting-cash">45.16 р.</td>
+                        <td class="table-body-accounting-cashless">43.98 р.</td>
+                     </tr>
+                     <tr>
+                        <td class="table-body-ecologyclass" rowspan="2"><span>ЕВРО-4</span></td>
+                        <td class="table-body-production">Лукойл</td>
+                        <td class="table-body-accounting-cash">41.16 р.</td>
+                        <td class="table-body-accounting-cashless">40.67 р.</td>
+                     </tr>
+                     <tr>
+                        <td class="table-body-production">Газпромнефть</td>
+                        <td class="table-body-accounting-cash">-</td>
+                        <td class="table-body-accounting-cashless">-</td>
+                     </tr>
+                     <tr>
+                        <td class="table-body-ecologyclass last" rowspan="3"><span>ЕВРО-3</span></td>
+                        <td class="table-body-production">Роснефть</td>
+                        <td class="table-body-accounting-cash">42.34 р.</td>
+                        <td class="table-body-accounting-cashless">41.64 р.</td>
+                     </tr>
+                     <tr>
+                        <td class="table-body-production">Газпромнефть</td>
+                        <td class="table-body-accounting-cash">-</td>
+                        <td class="table-body-accounting-cashless">-</td>
+                     </tr>
+                     <tr>
+                        <td class="table-body-production">Лукойл</td>
+                        <td class="table-body-accounting-cash">45.16 р.</td>
+                        <td class="table-body-accounting-cashless">43.98 р.</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
 
          </div>
       </section>
@@ -484,42 +489,40 @@
                <div class="swiper-button-prev main-reviews-btn-prev"></div>
                <div class="swiper-button-next main-reviews-btn-next"></div>
             </div>
-            <div class="reviews-slider swiper">
-               <div class="reviews-slider swiper-container">
-                  <div class="swiper-wrapper">
-                     <div class="swiper-slide">
+            <div class="reviews-slider swiper-container">
+               <div class="swiper-wrapper">
+                  <div class="swiper-slide">
 
-                        <div class="slider-item-reviews">
-                           <h5 class="slider-reviews-title">Гусев Вячеслав</h5>
-                           <p class="slider-reviews-suptitle">Индивидуальный предприниматель</p>
-                           <p class="slider-reviews-description">
-                              Velit, lectus sit urna tincidunt augue. Cursus vulputate
-                              pellentesque faucibus euismod. Diam pharetra, non, ut
-                              integer dui feugiat porttitor at. Non, dignissim enim
-                              viverra fringilla sit. Etiam justo a dignissim sociis vitae, nisi,
-                              justo, feugiat.
-                           </p>
-                           <a href="#" class="slider-reviews-link">Подробнее</a>
-                        </div>
+                     <div class="slider-item-reviews">
+                        <h5 class="slider-reviews-title">Гусев Вячеслав</h5>
+                        <p class="slider-reviews-suptitle">Индивидуальный предприниматель</p>
+                        <p class="slider-reviews-description">
+                           Velit, lectus sit urna tincidunt augue. Cursus vulputate
+                           pellentesque faucibus euismod. Diam pharetra, non, ut
+                           integer dui feugiat porttitor at. Non, dignissim enim
+                           viverra fringilla sit. Etiam justo a dignissim sociis vitae, nisi,
+                           justo, feugiat.
+                        </p>
+                        <a href="#" class="slider-reviews-link">Подробнее</a>
                      </div>
-
-                     <div class="swiper-slide">
-                        <div class="slider-item-reviews">
-                           <h5 class="slider-reviews-title">Зеленов Евгений</h5>
-                           <p class="slider-reviews-suptitle">Гененеральный директор транспортной компании</p>
-                           <p class="slider-reviews-description">
-                              Mi auctor sit habitasse sed mi cras ullamcorper massa
-                              sed. In augue fames sodales pretium, at scelerisque.
-                              Pulvinar a mattis pharetra mi, aliquet sem tristique lorem
-                              eleifend. Nisl, scelerisque ut libero, pellentesque.
-                              Tincidunt vestibulum volutpat lacus imperdiet morbi
-                              vulputate tristique facilisi.
-                           </p>
-                           <a href="#" class="slider-reviews-link">Подробнее</a>
-                        </div>
-                     </div>
-
                   </div>
+
+                  <div class="swiper-slide">
+                     <div class="slider-item-reviews">
+                        <h5 class="slider-reviews-title">Зеленов Евгений</h5>
+                        <p class="slider-reviews-suptitle">Гененеральный директор транспортной компании</p>
+                        <p class="slider-reviews-description">
+                           Mi auctor sit habitasse sed mi cras ullamcorper massa
+                           sed. In augue fames sodales pretium, at scelerisque.
+                           Pulvinar a mattis pharetra mi, aliquet sem tristique lorem
+                           eleifend. Nisl, scelerisque ut libero, pellentesque.
+                           Tincidunt vestibulum volutpat lacus imperdiet morbi
+                           vulputate tristique facilisi.
+                        </p>
+                        <a href="#" class="slider-reviews-link">Подробнее</a>
+                     </div>
+                  </div>
+
                </div>
             </div>
             <button class="main-reviews-button">Читать все отзывы</button>
@@ -569,7 +572,7 @@
                      <li><a href="#">Контакты</a></li>
                      <li><a href="#">О компании</a></li>
                      <li><a href="#">Личный кабинет</a></li>
-                  </ul>  
+                  </ul>
                </div>
                <div class="main-footer-contacts">
                   <h5>Отдел продаж</h5>
