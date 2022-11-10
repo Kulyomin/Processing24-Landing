@@ -151,19 +151,20 @@ header {
    color: #098FCF;
 }
 
-.burger-overlay {
+.burger-menu-overlay {
    position: absolute;
    position: fixed;
    top: 0;
    left: 0;
+   display: none;
    width: 100vw;
    height: 100vh;
    z-index: 10;
+   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.burger-overlay.active {
+.burger-menu-overlay.active {
    display: block;
-   background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Navbar */
@@ -376,10 +377,6 @@ select {
    position: relative;
 }
 
-
-
-
-
 .input-range {
    position: absolute;
    width: 100%;
@@ -391,12 +388,14 @@ select {
    height: 2px !important;
    padding: 0 !important;
    border: none;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
 }
 
 /* Inputs thumb for all browser */
 .input-range::-moz-range-thumb,
-.input-range::-webkit-slider-thumb,
-.input-range::-ms-thumb {
+.input-range::-webkit-slider-thumb {
    height: 16px;
    width: 16px;
    border-radius: 25px;
@@ -404,6 +403,9 @@ select {
    cursor: pointer;
    background: #098FCF;
    box-shadow: 0px 4px 16px rgba(4, 60, 119, 0.2);
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
 }
 
 /* Calculator Info */
@@ -897,14 +899,32 @@ select {
    .header-info-feedback {
       display: none;
    }
-   
-   .header-nav {
-      display: none;
-   }
 
    .burger-menu {
       display: block;
    }
+
+   .header-nav {
+      position: absolute;
+      right: 0;
+      width: 100%;
+      top: -100%;
+      z-index: 20;
+      padding: 10%;
+      display: block;
+      opacity: 0;
+      transition: 0.3s ease;
+   }
+
+   .header-nav.active {
+      top: 0;
+      opacity: 1;
+   }
+
+   .header-nav-ul {
+      flex-direction: column;
+      text-align: center;
+    }
 
    .main-delivery .main-delivery-title {
       text-align: center;
@@ -1015,10 +1035,6 @@ select {
 
    header {
       margin-bottom: 40px;
-   }
-
-   .header-nav {
-      display: none;
    }
 
    h1 {
@@ -1200,6 +1216,11 @@ select {
 }
 
 @media (max-width: 568px) {
+   .header-nav-ul li a {
+      font-size: 13px;
+      line-height: 15px;
+   }
+
    .calculator-info button {
       width: 100%;
    }

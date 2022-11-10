@@ -167,3 +167,22 @@ const calculation = (fuelVolume = 1670, fuelLiterPrice = 45.50) => {
 fillRange(inputRange);
 assignValue();
 calculation(fuelVolume.value, Number(String(fuelLiterPrice.innerHTML).slice(0, -1)));
+
+/* Burger Menu */
+const menu = document.querySelector('.burger-menu');
+const menuOverlay = document.querySelector('.burger-menu-overlay');
+const navbar = document.querySelector('.header-nav');
+var flag_menu = true;
+menu.addEventListener('click', () => {
+   console.log("Вы нажали на менюшку");
+   menuOverlay.classList.toggle('active');
+   navbar.classList.toggle('active');
+   if(flag_menu) {
+      menu.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+      flag_menu = false;
+   }
+   else {
+      menu.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      flag_menu = true;
+   }
+});
