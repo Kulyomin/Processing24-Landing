@@ -897,6 +897,10 @@ select {
    .header-info-feedback {
       display: none;
    }
+   
+   .header-nav {
+      display: none;
+   }
 
    .burger-menu {
       display: block;
