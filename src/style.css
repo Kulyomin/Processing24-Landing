@@ -376,6 +376,10 @@ select {
    position: relative;
 }
 
+
+
+
+
 .input-range {
    position: absolute;
    width: 100%;
@@ -391,7 +395,8 @@ select {
 
 /* Inputs thumb for all browser */
 .input-range::-moz-range-thumb,
-.input-range::-webkit-slider-thumb {
+.input-range::-webkit-slider-thumb,
+.input-range::-ms-thumb {
    height: 16px;
    width: 16px;
    border-radius: 25px;
